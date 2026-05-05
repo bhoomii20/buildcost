@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Upload, FileText, Image, Calendar, Link as LinkIcon, Search } from 'lucide-react';
 import { Document, Project } from '../App';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 type BillsDocumentsProps = {
   documents: Document[];

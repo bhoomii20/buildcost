@@ -5,7 +5,7 @@ import { Label } from './ui/label';
 import { Card } from './ui/card';
 import { HardHat, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { Checkbox } from './ui/checkbox';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 type LoginProps = {
   onLogin: (email: string) => void;
@@ -98,7 +98,7 @@ export function Login({ onLogin, onSignup, isDarkMode }: LoginProps) {
                   <Checkbox
                     id="remember"
                     checked={rememberMe}
-                    onCheckedChange={(checked) => setRememberMe(checked as boolean)}
+                    onCheckedChange={(checked: boolean) => setRememberMe(checked as boolean)}
                   />
                   <Label htmlFor="remember" className="cursor-pointer text-xs sm:text-sm">
                     Remember me

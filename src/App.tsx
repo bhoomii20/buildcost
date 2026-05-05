@@ -10,6 +10,7 @@ import { MyProjects } from './components/MyProjects';
 import { BillsDocuments } from './components/BillsDocuments';
 import { Settings } from './components/Settings';
 import { Home as HomeIcon, Calculator, FolderOpen, FileText, Settings as SettingsIcon } from 'lucide-react';
+import { Toaster } from './components/ui/sonner';
 
 export type Project = {
   id: string;
@@ -147,6 +148,7 @@ export default function App() {
   // Main app
   return (
     <div className={isDarkMode ? 'dark' : ''}>
+      <Toaster />
       <div className="min-h-screen bg-[#F4F5F7] dark:bg-gray-900 transition-colors">
         {/* Mobile App Container */}
         <div className="max-w-md mx-auto min-h-screen bg-white dark:bg-gray-800 shadow-xl flex flex-col">

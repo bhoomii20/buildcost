@@ -53,30 +53,30 @@ export function Onboarding({ onComplete }: OnboardingProps) {
   const Icon = slide.icon;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] to-[#1976D2] flex items-center justify-center p-4">
-      <div className="max-w-md w-full">
+    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] to-[#1976D2] flex items-center justify-center px-4 py-8">
+      <div className="max-w-md w-full flex flex-col items-center justify-center">
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.3 }}
-          className="text-center"
+          className="flex flex-col items-center w-full text-center"
         >
           {/* Icon */}
-          <div className="mb-8 flex justify-center">
-            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-2xl">
-              <Icon className="w-16 h-16" style={{ color: slide.color }} />
+          <div className="mb-6 sm:mb-8 flex justify-center w-full">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl mx-auto">
+              <Icon className="w-12 h-12 sm:w-16 sm:h-16" style={{ color: slide.color }} />
             </div>
           </div>
 
           {/* Content */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
-            <h1 className="text-gray-800 mb-4">{slide.title}</h1>
-            <p className="text-gray-600 mb-8">{slide.description}</p>
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col items-center w-full">
+            <h2 className="text-gray-800 mb-3 sm:mb-4 text-center">{slide.title}</h2>
+            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base text-center">{slide.description}</p>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center gap-2 mb-8">
+            <div className="flex justify-center gap-2 mb-6 sm:mb-8 w-full">
               {slides.map((_, index) => (
                 <div
                   key={index}
@@ -90,24 +90,24 @@ export function Onboarding({ onComplete }: OnboardingProps) {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 w-full">
               {currentSlide < slides.length - 1 && (
                 <Button
                   variant="outline"
                   onClick={handleSkip}
-                  className="flex-1 h-12"
+                  className="flex-1 h-11 sm:h-12 text-sm sm:text-base"
                 >
                   Skip
                 </Button>
               )}
               <Button
                 onClick={handleNext}
-                className="flex-1 h-12 bg-[#1E88E5] hover:bg-[#1976D2] text-white"
+                className="flex-1 h-11 sm:h-12 bg-[#1E88E5] hover:bg-[#1976D2] text-white text-sm sm:text-base"
               >
                 {currentSlide < slides.length - 1 ? (
                   <>
                     Next
-                    <ChevronRight className="w-5 h-5 ml-1" />
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
                   </>
                 ) : (
                   'Get Started'
